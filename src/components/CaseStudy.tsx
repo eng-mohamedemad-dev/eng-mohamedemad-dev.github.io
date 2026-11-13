@@ -1,19 +1,19 @@
 import Link from 'next/link';
 import {PROFILE} from '@/lib/profile';
 import type {Project} from '@/content/projects';
+import type {PortfolioEdition} from '@/config/portfolio';
 import {ProjectGallery} from './ProjectGallery';
 import JameelaaStory from '@/content/projects/jameelaa.mdx';
 const STORIES:Record<string,typeof JameelaaStory>={jameelaa:JameelaaStory};
 
-export function CaseStudy({project,edition}:{project:Project;edition:'classic'|'evolved'}) {
+export function CaseStudy({project,edition}:{project:Project;edition:PortfolioEdition}) {
  const Story=STORIES[project.slug];
- const back=edition==='classic'?'/classic/':'/';
- const other=edition==='classic'?`/work/${project.slug}/`:`/classic/work/${project.slug}/`;
+ const back='/';
  return <div className={`case-study case-study-${edition}`}>
    <div className="case-topline"/>
    <header className="case-nav container">
     <Link href={back} className="case-brand"><span className="brand-mark">m<span className="brand-dot">.</span></span> Mohamed Emad</Link>
-    <nav aria-label="Case study navigation"><Link href={back}>← Back to work</Link><Link href={other}>Switch edition ↗</Link></nav>
+    <nav aria-label="Case study navigation"><Link href={back}>← Back to work</Link></nav>
    </header>
    <main>
      <section className="case-hero container">

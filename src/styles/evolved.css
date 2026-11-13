@@ -334,12 +334,15 @@
 @media(prefers-reduced-motion:reduce){.edition-evolved *,.edition-evolved *::before,.edition-evolved *::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 .edition-evolved .reveal{opacity:1;transform:none}}
 
-.edition-evolved .edition-switch{display:flex;align-items:center;gap:8px;border:1px solid #8a9580;padding:8px 12px;border-radius:100px;font-size:11px;font-weight:800;letter-spacing:.02em;background:var(--paper);text-transform:none;white-space:nowrap}
-.edition-evolved .edition-switch:hover,.edition-evolved .edition-switch:focus-visible{background:var(--acid);color:var(--ink)}
 .edition-evolved .case-study-cta{display:inline-flex;align-items:center;margin-top:16px;font-size:12px;font-weight:800;letter-spacing:.01em;border-bottom:1px solid currentColor;padding-bottom:7px;color:inherit}
 .edition-evolved .case-study-cta:hover{color:#cbea5b}
 .edition-evolved .secondary-link{font-size:12px;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:6px}
 .edition-evolved .editorial-diagram .invoice-row{display:flex;justify-content:space-between;align-items:center}
-@media(max-width:670px){.edition-evolved .edition-switch{padding:7px 8px;font-size:10px}}
 
 @media (max-width:670px){.edition-evolved .secondary-card.offline{min-height:570px}}
+
+/* Header width hardening: shrinking labels should never force mobile horizontal scrolling. */
+.edition-evolved{width:100%;max-width:100%;overflow-x:clip}
+.edition-evolved .nav{min-width:0;max-width:100%}
+.edition-evolved .nav>*{min-width:0}
+@media(max-width:670px){.edition-evolved .nav{gap:10px}.edition-evolved .hero-index{white-space:nowrap}}

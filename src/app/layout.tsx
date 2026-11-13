@@ -3,6 +3,7 @@ import {absoluteUrl, SITE_ORIGIN, SITE_DESCRIPTION, SITE_NAME, SOCIAL_IMAGE} fro
 import './globals.css';
 import '@/styles/classic.css';
 import '@/styles/evolved.css';
+import '@/styles/dark.css';
 import '@/styles/case-study.css';
 
 export const metadata: Metadata = {

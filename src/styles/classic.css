@@ -169,10 +169,13 @@
 .edition-classic .reveal{opacity:1;transform:none;transition:none}
 .edition-classic *{animation:none!important;transition:none!important}}
 
-.edition-classic .edition-switch{display:flex;align-items:center;gap:8px;border:1px solid #8a9580;padding:8px 12px;border-radius:100px;font-size:11px;font-weight:800;letter-spacing:.02em;background:var(--paper);text-transform:none;white-space:nowrap}
-.edition-classic .edition-switch:hover,.edition-classic .edition-switch:focus-visible{background:var(--acid);color:var(--ink)}
 .edition-classic .case-study-cta{display:inline-flex;align-items:center;margin-top:16px;font-size:12px;font-weight:800;letter-spacing:.01em;border-bottom:1px solid currentColor;padding-bottom:7px;color:inherit}
 .edition-classic .case-study-cta:hover{color:#cbea5b}
 .edition-classic .secondary-link{font-size:12px;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:6px}
 .edition-classic .editorial-diagram .invoice-row{display:flex;justify-content:space-between;align-items:center}
-@media(max-width:670px){.edition-classic .edition-switch{padding:7px 8px;font-size:10px}}
+
+/* Header width hardening: shrinking labels should never force mobile horizontal scrolling. */
+.edition-classic{width:100%;max-width:100%;overflow-x:clip}
+.edition-classic .nav{min-width:0;max-width:100%}
+.edition-classic .nav>*{min-width:0}
+@media(max-width:670px){.edition-classic .nav{gap:10px}.edition-classic .hero-index{white-space:nowrap}}

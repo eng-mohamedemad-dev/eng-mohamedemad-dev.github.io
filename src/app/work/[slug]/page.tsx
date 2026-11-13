@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import {projectRepository} from '@/lib/projects';
 import {CaseStudy} from '@/components/CaseStudy';
+import {ACTIVE_EDITION} from '@/config/portfolio';
 import {StructuredData} from '@/components/StructuredData';
 import {projectStructuredData} from '@/lib/structured-data';
 import {absoluteUrl, JAMEELAA_IMAGE, SOCIAL_IMAGE} from '@/lib/seo';
@@ -27,5 +28,5 @@ export default async function ProjectPage({params}: {params: Promise<{slug: stri
   const {slug} = await params;
   const project = projectRepository.findBySlug(slug);
   if (!project) notFound();
-  return <><StructuredData data={projectStructuredData(project)}/><CaseStudy project={project} edition="evolved"/></>;
+  return <><StructuredData data={projectStructuredData(project)}/><CaseStudy project={project} edition={ACTIVE_EDITION}/></>;
 }

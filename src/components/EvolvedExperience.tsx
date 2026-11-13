@@ -10,7 +10,7 @@ export function EvolvedExperience(){const featured=PROJECTS[0];return <div class
 <div className="top-strip"></div><div className="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 <header className="site-header" id="site-header">
 <div className="container nav">
-<a className="brand" href="#top" aria-label="Mohamed, home"><span className="brand-mark">m<span className="brand-dot">.</span></span><span>Mohamed Emad</span></a><a className="edition-switch" href={`${siteBasePath}/classic/`} aria-label="Switch to original portfolio">Edition 01 ↗</a>
+<a className="brand" href="#top" aria-label="Mohamed, home"><span className="brand-mark">m<span className="brand-dot">.</span></span><span>Mohamed Emad</span></a>
 <nav className="nav-links" aria-label="Main navigation"><a href="#work">Work</a><a href="#thinking">Approach</a><a href="#systems">Systems</a><a href="#about">About</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></nav>
 <a className="nav-cta" href="#contact">LET'S CONNECT <span className="arrow-round" aria-hidden="true">↗</span></a>
 <button className="mobile-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"><span className="mobile-toggle-icon" aria-hidden="true"></span><span id="menu-toggle-text">Menu</span></button>
