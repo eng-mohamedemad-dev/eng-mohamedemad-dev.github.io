@@ -42,3 +42,10 @@ Project content lives in `src/content/projects.ts` and MDX stories in `src/conte
 ## Security, accessibility and SEO
 
 Only canonical pages are indexed. `schema.org` JSON-LD, Open Graph cards, canonical URLs, sitemap and robots metadata share the same project source. Mobile navigation uses accessible labels, open/close semantics and Escape, and honors reduced-motion settings. No unnecessary runtime backend or secrets.
+
+## Contact and appearance
+
+- Edit `src/lib/profile.ts` for public WhatsApp (`wa.me` in E.164 format), Facebook, LinkedIn, email, CV and GitHub links. WhatsApp and Facebook were explicitly approved by the portfolio owner; **do not** invent personal contact details.
+- All three editions include WhatsApp-first contact shortcuts, accessible light/dark buttons and progressive scroll reveals. Each edition has its own saved theme preference (`localStorage`); the default is light for Classic/Evolved and dark for Amber Night.
+- Dark/light mode is **independent** of the active homepage edition; visitors cannot switch editions from the UI. Only `src/config/portfolio.ts` controls which edition the canonical homepage renders after a rebuild.
+- Scroll animations only begin once IntersectionObserver is available and JavaScript has mounted; they are disabled for users with `prefers-reduced-motion` enabled. No content depends on animation to be visible.

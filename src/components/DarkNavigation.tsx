@@ -2,6 +2,7 @@
 
 import {useEffect,useState} from 'react';
 import {PROFILE} from '@/lib/profile';
+import {ThemeToggle} from './ThemeToggle';
 
 const links = [
   {href:'#work',title:'Projects'},
@@ -24,7 +25,7 @@ export function DarkNavigation(){
     <div className="dark-container dark-nav">
       <a className="dark-brand" href="#top" aria-label="Mohamed Emad homepage"><span className="dark-brand-symbol" aria-hidden="true">&lt;/&gt;</span>Mohamed Emad</a>
       <nav className="dark-desktop-nav" aria-label="Primary navigation">{links.map((l,i)=><a key={l.href} className={i===0?'dark-current':undefined} href={l.href}>{l.title}</a>)}</nav>
-      <a className="dark-cv" href={PROFILE.cv} target="_blank" rel="noopener noreferrer">View CV <span aria-hidden="true">↗</span></a>
+      <ThemeToggle edition="dark"/><a className="dark-cv" href={PROFILE.cv} target="_blank" rel="noopener noreferrer">View CV <span aria-hidden="true">↗</span></a>
       <button className={`dark-menu-button${open?' is-open':''}`} type="button" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-controls="dark-mobile-menu" aria-label={open?'Close navigation':'Open navigation'}>
         <span/><span/><span/>
       </button>

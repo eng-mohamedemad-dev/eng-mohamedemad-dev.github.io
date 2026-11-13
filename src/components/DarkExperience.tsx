@@ -4,6 +4,8 @@ import {PROJECTS} from '@/content/projects';
 import {asset} from '@/lib/site';
 import {AdditionalProjects} from './AdditionalProjects';
 import {DarkNavigation} from './DarkNavigation';
+import {SocialLinks,WhatsAppIcon} from './SocialLinks';
+import {ScrollReveals} from './ScrollReveals';
 
 const expertise = [
   {num:'01',icon:'⌘',title:'Full-stack development',detail:'Responsive products, thoughtful interfaces and resilient backend systems.',stack:'React · Vue · Laravel · Node.js'},
@@ -32,9 +34,11 @@ export function DarkExperience(){
           <p className="dark-hero-description">I build digital products from first idea to production — thoughtful interfaces, reliable backends, and infrastructure that keeps them running.</p>
           <div className="dark-hero-cta">
             <a href="#work" className="dark-button dark-button-primary">Explore my work <span aria-hidden="true">↗</span></a>
-            <a href={PROFILE.mailto} className="dark-button dark-button-outline">Get in touch <span aria-hidden="true">✉</span></a>
+            <a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" className="dark-button dark-button-outline">WhatsApp <WhatsAppIcon/></a>
           </div>
           <div className="dark-social" aria-label="Professional profiles">
+            <a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+            <a href={PROFILE.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</a>
             <a href={PROFILE.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
           </div>
@@ -74,9 +78,10 @@ export function DarkExperience(){
         <div className="dark-about-grid"><div><span className="dark-section-label"><i/>05 — ABOUT</span><h2>Build it well.<br/><em>Keep it running.</em></h2></div><div><p>Good engineering takes more than choosing a framework. It means understanding the problem, protecting existing users, shipping deliberately and taking responsibility for what runs in production.</p><p>That end-to-end mindset shapes how I approach projects, whether I&apos;m building a new feature or improving the system behind it.</p><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer" className="dark-about-link">View my CV ↗</a></div></div>
       </section>
       <section id="contact" className="dark-contact dark-container">
-        <div className="dark-contact-inner"><div><span className="dark-section-label"><i/>06 — HAVE SOMETHING IN MIND?</span><h2>Let&apos;s make it <em>work.</em></h2><p>Have a product to build or a technical problem to solve? Let&apos;s talk.</p></div><a href={PROFILE.mailto} className="dark-button dark-button-primary">Start a conversation <span aria-hidden="true">↗</span></a></div>
+        <div className="dark-contact-inner"><div><span className="dark-section-label"><i/>06 — HAVE SOMETHING IN MIND?</span><h2>Let&apos;s make it <em>work.</em></h2><p>Have a product to build or a technical problem to solve? Let&apos;s talk.</p><SocialLinks className="dark-contact-channels"/></div><a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" className="dark-button dark-button-primary">Chat on WhatsApp <WhatsAppIcon/></a></div>
       </section>
     </main>
-    <footer className="dark-footer"><div className="dark-container dark-footer-inner"><span>© {new Date().getFullYear()} Mohamed Emad</span><div><a href={PROFILE.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href={PROFILE.mailto}>Email ↗</a></div><a href="#top">Back to top ↑</a></div></footer>
+    <footer className="dark-footer"><div className="dark-container dark-footer-inner"><span>© {new Date().getFullYear()} Mohamed Emad</span><div><a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href={PROFILE.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href={PROFILE.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href={PROFILE.mailto}>Email ↗</a></div><a href="#top">Back to top ↑</a></div></footer>
+    <ScrollReveals edition="dark"/>
   </div>;
 }

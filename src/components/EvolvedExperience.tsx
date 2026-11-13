@@ -4,6 +4,9 @@ import {siteBasePath} from '@/lib/site';
 import {PROJECTS} from '@/content/projects';
 import {AdditionalProjects} from './AdditionalProjects';
 import {ClientBehavior} from './ClientBehavior';
+import {ThemeToggle} from './ThemeToggle';
+import {SocialLinks,WhatsAppIcon} from './SocialLinks';
+import {ScrollReveals} from './ScrollReveals';
 /** Faithful JSX conversion of the approved handcrafted evolved portfolio edition. */
 export function EvolvedExperience(){const featured=PROJECTS[0];return <div className="edition-evolved">
 <a className="skip" href="#main">Skip to content</a>
@@ -12,8 +15,8 @@ export function EvolvedExperience(){const featured=PROJECTS[0];return <div class
 <div className="container nav">
 <a className="brand" href="#top" aria-label="Mohamed, home"><span className="brand-mark">m<span className="brand-dot">.</span></span><span>Mohamed Emad</span></a>
 <nav className="nav-links" aria-label="Main navigation"><a href="#work">Work</a><a href="#thinking">Approach</a><a href="#systems">Systems</a><a href="#about">About</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></nav>
-<a className="nav-cta" href="#contact">LET'S CONNECT <span className="arrow-round" aria-hidden="true">↗</span></a>
-<button className="mobile-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"><span className="mobile-toggle-icon" aria-hidden="true"></span><span id="menu-toggle-text">Menu</span></button>
+<ThemeToggle edition="evolved"/><a className="nav-cta" href="#contact">LET'S CONNECT <span className="arrow-round" aria-hidden="true">↗</span></a>
+<button className="mobile-toggle" type="button" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span className="mobile-toggle-icon" aria-hidden="true"></span><span id="menu-toggle-text">Menu</span></button>
 </div>
 <nav className="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" inert={true}><div className="container mobile-menu-inner"><a href="#work">Work ↗</a><a href="#thinking">Approach ↗</a><a href="#systems">Systems ↗</a><a href="#about">About ↗</a><a href="#contact">Contact ↗</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></div></nav>
 </header>
@@ -53,7 +56,7 @@ export function EvolvedExperience(){const featured=PROJECTS[0];return <div class
 </div></section>
 <section className="about section" id="about" aria-labelledby="about-title"><div className="container about-layout"><div className="reveal"><div className="eyebrow"><span className="num">05 / ABOUT ME</span> THE PERSON BEHIND THE CODE</div><h2 className="about-text" id="about-title">A developer who cares about <em>what happens after</em> the code is written.</h2><p className="about-caption">I'm Mohamed Emad, a full-stack software engineer working across the product lifecycle — from UI and backend design to deployment, security, and day-to-day operations. I like clean ideas, thoughtful decisions, and software that earns its place in the real world.</p></div><div className="stack reveal"><div className="stack-heading"><strong>TECHNOLOGIES</strong><span>The practical stack.</span></div><div className="stack-item"><strong>Interfaces</strong><span>React / Vue / Flutter</span></div><div className="stack-item"><strong>Backend &amp; APIs</strong><span>Laravel / Node.js / NestJS</span></div><div className="stack-item"><strong>Data &amp; systems</strong><span>PostgreSQL / Redis / Queues</span></div><div className="stack-item"><strong>Shipping</strong><span>Docker / GitHub Actions / CI/CD</span></div><div className="stack-item"><strong>Operations</strong><span>Linux / Observability / Security</span></div><div className="stack-bottom"><b></b> Focused on shipping, not collecting buzzwords.</div></div></div></section>
 </main>
-<footer className="footer section" id="contact"><div className="container"><div className="eyebrow">06 / SOMETHING WORTH BUILDING?</div><div className="footer-lead"><h2>Let's make<br />it <em>real.</em></h2><a className="footer-cta" href={PROFILE.mailto} aria-label="Email Mohamed about a project" title="Email Mohamed">↗</a></div><div className="footer-bottom"><span>© <span id="current-year">2026</span> MOHAMED · FROM IDEA TO PRODUCTION</span><div className="footer-links"><a href={PROFILE.mailto}>EMAIL ↗</a><a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href={PROFILE.github} target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">VIEW CV ↗</a></div><span className="footer-signature">Made with intent.</span></div></div></footer>
+<footer className="footer section" id="contact"><div className="container"><div className="eyebrow">06 / SOMETHING WORTH BUILDING?</div><div className="footer-lead"><h2>Let's make<br />it <em>real.</em></h2><a className="footer-cta" href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"><WhatsAppIcon size={34}/></a></div><SocialLinks className="evolved-contact-channels"/><div className="footer-bottom"><span>© <span id="current-year">2026</span> MOHAMED · FROM IDEA TO PRODUCTION</span><div className="footer-links"><a href={PROFILE.mailto}>EMAIL ↗</a><a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href={PROFILE.github} target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">VIEW CV ↗</a></div><span className="footer-signature">Made with intent.</span></div></div></footer>
 
 
-<ClientBehavior edition="evolved"/></div>}
+<ClientBehavior edition="evolved"/><ScrollReveals edition="evolved"/></div>}

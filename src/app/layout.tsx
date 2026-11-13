@@ -5,6 +5,7 @@ import '@/styles/classic.css';
 import '@/styles/evolved.css';
 import '@/styles/dark.css';
 import '@/styles/case-study.css';
+import '@/styles/interaction.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),

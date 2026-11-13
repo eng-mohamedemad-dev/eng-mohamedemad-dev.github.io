@@ -13,15 +13,7 @@ export function ClientBehavior({ edition }: {edition:'classic'|'evolved'}) {
   useEffect(() => {
     const root=document.querySelector<HTMLElement>(`.edition-${edition}`);
     if(!root) return;
-    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const reveals=Array.from(root.querySelectorAll<HTMLElement>('.reveal'));
-    if (reduced || !('IntersectionObserver' in window)) reveals.forEach(el=>el.classList.add('show','is-visible'));
-    const observer=(!reduced && 'IntersectionObserver' in window) ? new IntersectionObserver((entries, currentObserver)=>{
-      for(const entry of entries) if(entry.isIntersecting){entry.target.classList.add('show','is-visible');currentObserver.unobserve(entry.target)}
-    },{threshold:.06,rootMargin:'0px 0px 28px 0px'}):null;
-    reveals.forEach(el=>observer?.observe(el));
-
-    if(edition==='classic') return () => observer?.disconnect();
+    if(edition==='classic') return;
     const progress=root.querySelector<HTMLElement>('#scroll-progress');
     const menuButton=root.querySelector<HTMLButtonElement>('#menu-toggle');
     const menu=root.querySelector<HTMLElement>('#mobile-menu');
@@ -68,7 +60,7 @@ export function ClientBehavior({ edition }: {edition:'classic'|'evolved'}) {
     const year=root.querySelector('#current-year');if(year)year.textContent=String(new Date().getFullYear());
 
     return ()=>{
-      observer?.disconnect();cancelAnimationFrame(raf);
+      cancelAnimationFrame(raf);
       window.removeEventListener('scroll',onScroll);window.removeEventListener('resize',onScroll);
       window.removeEventListener('keydown',onKey);window.removeEventListener('resize',onResize);
       menuButton?.removeEventListener('click',toggleMenu);links.forEach(a=>a.removeEventListener('click',closeMenu));

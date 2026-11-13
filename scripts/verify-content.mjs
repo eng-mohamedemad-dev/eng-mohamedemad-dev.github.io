@@ -29,3 +29,14 @@ for (const file of ['src/components/ClassicExperience.tsx','src/components/Evolv
  const content = readFileSync(file,'utf8');
  if (/Switch edition|edition-switch|Switch to (original|enhanced) portfolio/.test(content)) throw new Error(`Unexpected edition switcher: ${file}`);
 }
+
+for (const file of ['src/components/ClassicExperience.tsx','src/components/EvolvedExperience.tsx','src/components/DarkExperience.tsx']) {
+ const source=readFileSync(file,'utf8');
+ if(!source.includes('ScrollReveals')||!source.includes('SocialLinks')) throw new Error(`Missing motion or contact channels: ${file}`);
+}
+for (const match of ['201068013253','facebook.com/Mohamed.Emad.Dev']) {
+ if (!profile.includes(match)) throw new Error(`Missing owner-approved channel: ${match}`);
+}
+for (const file of ['src/components/ThemeToggle.tsx','src/components/ScrollReveals.tsx','src/styles/interaction.css']) {
+ if(!existsSync(file)) throw new Error(`Missing theme/motion support: ${file}`);
+}

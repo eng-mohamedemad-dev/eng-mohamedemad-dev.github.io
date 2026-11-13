@@ -4,10 +4,13 @@ import {siteBasePath} from '@/lib/site';
 import {PROJECTS} from '@/content/projects';
 import {AdditionalProjects} from './AdditionalProjects';
 import {ClientBehavior} from './ClientBehavior';
+import {ThemeToggle} from './ThemeToggle';
+import {SocialLinks,WhatsAppIcon} from './SocialLinks';
+import {ScrollReveals} from './ScrollReveals';
 /** Faithful JSX conversion of the approved handcrafted classic portfolio edition. */
 export function ClassicExperience(){const featured=PROJECTS[0];return <div className="edition-classic">
 <div className="topline"></div>
-<header><div className="container nav"><a className="logo" href="#top" aria-label="Mohamed home"><span className="logo-mark">m<span className="logo-dot">.</span></span><span>Mohamed Emad</span></a><nav className="nav-items" aria-label="Main menu"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">Expertise</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></nav><a href="#contact" className="nav-contact">Get in touch <span className="arrow-circle">↗</span></a></div></header>
+<header><div className="container nav"><a className="logo" href="#top" aria-label="Mohamed home"><span className="logo-mark">m<span className="logo-dot">.</span></span><span>Mohamed Emad</span></a><nav className="nav-items" aria-label="Main menu"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">Expertise</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></nav><ThemeToggle edition="classic"/><a href="#contact" className="nav-contact">Get in touch <span className="arrow-circle">↗</span></a></div></header>
 <main id="top">
 <section className="hero container">
 <div className="index-row"><div className="eyebrow"><b>01 / INTRODUCTION</b> FULL-STACK ENGINEERING</div><div className="index-right"><span className="circle-live"></span> BUILT TO SHIP.<br />BUILT TO LAST.</div></div>
@@ -21,6 +24,6 @@ export function ClassicExperience(){const featured=PROJECTS[0];return <div class
 </section>
 <AdditionalProjects edition="classic"/><section className="approach" id="approach"><div className="container approach-wrap"><div><div className="eyebrow">03 / HOW I WORK</div><h2>Think deeper.<br />Build <em>better.</em></h2></div><div className="approach-note"><p>Good engineering isn't about adding complexity. It's about making the right decisions — and being responsible for what happens next.</p><div className="approach-tags"><div>01 — PRODUCT &amp; UI <span>React · Vue · TypeScript</span></div><div>02 — BACKEND &amp; SYSTEMS <span>Laravel · Node.js · PostgreSQL</span></div><div>03 — OPERATIONS <span>Docker · CI/CD · Infrastructure</span></div></div></div></div></section>
 </main>
-<footer className="footer" id="contact"><div className="container"><div className="eyebrow">04 / LET'S MAKE SOMETHING REAL</div><div className="footer-top"><h2>Have a project<br /><em>in mind?</em></h2><a className="footer-action" href={PROFILE.mailto} aria-label="Email Mohamed about a project">↗</a></div><div className="footer-bottom"><span>© 2026 MOHAMED EMAD · SOFTWARE ENGINEERING &amp; BEYOND</span><div className="footer-links"><a href={PROFILE.mailto}>EMAIL ↗</a><a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href={PROFILE.github} target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">VIEW CV ↗</a></div><span>HANDCRAFTED, NOT GENERIC.</span></div></div></footer>
+<footer className="footer" id="contact"><div className="container"><div className="eyebrow">04 / LET'S MAKE SOMETHING REAL</div><div className="footer-top"><h2>Have a project<br /><em>in mind?</em></h2><a className="footer-action" href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><WhatsAppIcon size={34}/></a></div><SocialLinks className="classic-contact-channels"/><div className="footer-bottom"><span>© 2026 MOHAMED EMAD · SOFTWARE ENGINEERING &amp; BEYOND</span><div className="footer-links"><a href={PROFILE.mailto}>EMAIL ↗</a><a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href={PROFILE.github} target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">VIEW CV ↗</a></div><span>HANDCRAFTED, NOT GENERIC.</span></div></div></footer>
 
-<ClientBehavior edition="classic"/></div>}
+<ClientBehavior edition="classic"/><ScrollReveals edition="classic"/></div>}
