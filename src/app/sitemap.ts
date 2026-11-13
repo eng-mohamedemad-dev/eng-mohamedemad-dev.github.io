@@ -1,4 +1,7 @@
 import type {MetadataRoute} from 'next';
+
+// Metadata routes must opt into static output for GitHub Pages.
+export const dynamic = 'force-static';
 import {projectRepository} from '@/lib/projects';
 import {absoluteUrl} from '@/lib/seo';
 
