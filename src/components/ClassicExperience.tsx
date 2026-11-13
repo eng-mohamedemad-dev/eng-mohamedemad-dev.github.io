@@ -10,7 +10,7 @@ import {ScrollReveals} from './ScrollReveals';
 /** Faithful JSX conversion of the approved handcrafted classic portfolio edition. */
 export function ClassicExperience(){const featured=PROJECTS[0];return <div className="edition-classic">
 <div className="topline"></div>
-<header><div className="container nav"><a className="logo" href="#top" aria-label="Mohamed home"><span className="logo-mark">m<span className="logo-dot">.</span></span><span>Mohamed Emad</span></a><nav className="nav-items" aria-label="Main menu"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">Expertise</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></nav><ThemeToggle edition="classic"/><a href="#contact" className="nav-contact">Get in touch <span className="arrow-circle">↗</span></a></div></header>
+<header><div className="container nav"><a className="logo" href="#top" aria-label="Mohamed home"><span className="logo-mark">m<span className="logo-dot">.</span></span><span>Mohamed Emad</span></a><nav className="nav-items" aria-label="Main menu"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">Expertise</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></nav><ThemeToggle edition="classic"/><a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" className="nav-contact" aria-label="Chat on WhatsApp">WhatsApp <span className="arrow-circle"><WhatsAppIcon size={20}/></span></a></div></header>
 <main id="top">
 <section className="hero container">
 <div className="index-row"><div className="eyebrow"><b>01 / INTRODUCTION</b> FULL-STACK ENGINEERING</div><div className="index-right"><span className="circle-live"></span> BUILT TO SHIP.<br />BUILT TO LAST.</div></div>

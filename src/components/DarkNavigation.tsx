@@ -3,6 +3,7 @@
 import {useEffect,useState} from 'react';
 import {PROFILE} from '@/lib/profile';
 import {ThemeToggle} from './ThemeToggle';
+import {WhatsAppIcon} from './SocialLinks';
 
 const links = [
   {href:'#work',title:'Projects'},
@@ -31,6 +32,7 @@ export function DarkNavigation(){
       </button>
     </div>
     <nav id="dark-mobile-menu" className={`dark-mobile-nav${open?' is-open':''}`} aria-label="Mobile navigation" inert={!open}>
+      <a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" onClick={()=>setOpen(false)} aria-label="Chat on WhatsApp">WhatsApp <WhatsAppIcon/></a>
       {links.map(l=><a key={l.href} href={l.href} onClick={()=>setOpen(false)}>{l.title}<span aria-hidden="true">↗</span></a>)}
       <a href={PROFILE.cv} target="_blank" rel="noopener noreferrer" onClick={()=>setOpen(false)}>View CV <span aria-hidden="true">↗</span></a>
     </nav>

@@ -15,10 +15,10 @@ export function EvolvedExperience(){const featured=PROJECTS[0];return <div class
 <div className="container nav">
 <a className="brand" href="#top" aria-label="Mohamed, home"><span className="brand-mark">m<span className="brand-dot">.</span></span><span>Mohamed Emad</span></a>
 <nav className="nav-links" aria-label="Main navigation"><a href="#work">Work</a><a href="#thinking">Approach</a><a href="#systems">Systems</a><a href="#about">About</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></nav>
-<ThemeToggle edition="evolved"/><a className="nav-cta" href="#contact">LET'S CONNECT <span className="arrow-round" aria-hidden="true">↗</span></a>
+<ThemeToggle edition="evolved"/><a className="nav-cta" href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WHATSAPP <span className="arrow-round"><WhatsAppIcon size={20}/></span></a>
 <button className="mobile-toggle" type="button" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu"><span className="mobile-toggle-icon" aria-hidden="true"></span><span id="menu-toggle-text">Menu</span></button>
 </div>
-<nav className="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" inert={true}><div className="container mobile-menu-inner"><a href="#work">Work ↗</a><a href="#thinking">Approach ↗</a><a href="#systems">Systems ↗</a><a href="#about">About ↗</a><a href="#contact">Contact ↗</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></div></nav>
+<nav className="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" inert={true}><div className="container mobile-menu-inner"><a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" className="mobile-whatsapp"><WhatsAppIcon/> WhatsApp ↗</a><a href="#work">Work ↗</a><a href="#thinking">Approach ↗</a><a href="#systems">Systems ↗</a><a href="#about">About ↗</a><a href="#contact">Contact ↗</a><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer">CV ↗</a></div></nav>
 </header>
 <main id="main">
 <section className="hero section" id="top" aria-labelledby="hero-title">
