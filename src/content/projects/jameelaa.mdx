@@ -1,0 +1,23 @@
+## Not just a collection of screens.
+
+Jameelaa is a live service-booking product with multiple moving parts: booking flows, payment states, role-specific behavior, notifications and the operational systems that keep those parts consistent.
+
+### 01 — Define the contracts
+
+The API has to support real clients, not only the newest build. That means approaching changes with **backward compatibility** in mind, keeping published application versions operational and favoring additive changes when possible.
+
+### 02 — Treat workflows as systems
+
+Bookings and payments are not a handful of buttons. Their outcomes can depend on asynchronous events, background jobs, state transitions and recovery paths. Laravel, PostgreSQL, Redis and queues are part of the engineering story behind those interactions.
+
+### 03 — Make shipping repeatable
+
+Code is only part of delivery. Automated checks, containerized environments, controlled rollouts and rollback plans help make releases predictable. Production configuration and internal architecture details are deliberately simplified here.
+
+### 04 — Own the product after launch
+
+Monitoring, observability, security and incident response inform the work after deployment. The goal is not to claim perfection; it is to keep learning from real-world behavior and improve safely.
+
+> **My contribution:** Full-stack engineering, backend architecture, infrastructure, delivery and operations. Individual mobile implementation tasks are credited separately to the appropriate developer.
+
+**Note:** Precise customer numbers, performance measurements and private implementation details are intentionally omitted until they can be verified and approved for public release.

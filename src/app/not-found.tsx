@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function NotFound(){return <main style={{minHeight:'100vh',display:'grid',placeContent:'center',padding:32,background:'#efeee8',color:'#20231f',fontFamily:'Arial,sans-serif'}}><p style={{letterSpacing:'.2em'}}>404 / NOT FOUND</p><h1 style={{fontSize:'clamp(60px,10vw,140px)',margin:'0 0 25px',lineHeight:1}}>Wrong turn<span style={{color:'#98b637'}}>.</span></h1><p>This page does not exist yet.</p><Link href="/" style={{textDecoration:'underline'}}>Back to the portfolio ↗</Link></main>}

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, follow"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#efeee8" name="theme-color"/>
+<meta content="Mohamed Emad — full-stack software engineer. Products from idea to production: interfaces, architecture, delivery and infrastructure." name="description"/>
+<title>Mohamed Emad — From idea to production</title>
+<meta content="Mohamed Emad — From idea to production" property="og:title"/>
+<meta content="Full-stack software engineering, product thinking, and production infrastructure." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700;750;800&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<style>
+    :root {
+      --paper: #efeee8;
+      --paper-2:#e7e9dc;
+      --ink: #20231f;
+      --muted: #60665d;
+      --line: #c8cac1;
+      --acid: #cbea5b;
+      --acid-dark:#a6c543;
+      --night: #232a24;
+      --night-2:#1d231e;
+      --white: #f7f7f1;
+      --font: 'DM Sans', Arial, Helvetica, sans-serif;
+      --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+      --ease:cubic-bezier(.22,1,.36,1);
+    }
+    *,*::before,*::after {box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--font);-webkit-font-smoothing:antialiased}
+    ::selection{background:var(--acid);color:var(--ink)}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer;color:inherit}
+    button:focus-visible,a:focus-visible{outline:3px solid #779a00;outline-offset:5px}
+    button[disabled]{cursor:not-allowed;opacity:.5}
+    svg{display:block}
+    .container{width:min(1460px,calc(100% - 112px));margin-inline:auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip{position:fixed;top:-70px;left:18px;z-index:100;background:var(--acid);padding:12px 20px;font-weight:750}
+    .skip:focus{top:14px}
+    .top-strip{height:5px;background:var(--ink)}
+    .scroll-progress{position:fixed;height:3px;left:0;top:0;z-index:100;width:0;background:var(--acid-dark);pointer-events:none}
+    .site-header{z-index:60;position:sticky;top:0;background:rgba(239,238,232,.95);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+    .nav{height:83px;display:flex;justify-content:space-between;align-items:center;gap:26px}
+    .brand{display:inline-flex;gap:14px;align-items:center;white-space:nowrap;font-size:19px;font-weight:750;letter-spacing:-.06em}
+    .brand-mark{font:italic 42px/.7 var(--serif);letter-spacing:-.1em;transform:translateY(-2px)}
+    .brand-mark .brand-dot{color:#7f9b2a}
+    .nav-links{display:flex;gap:39px;margin-left:auto;margin-right:35px;align-items:center}
+    .nav-links a{font-size:13px;font-weight:700;position:relative;padding:6px 0}
+    .nav-links a::after{content:"";position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--ink);transition:width .3s var(--ease)}
+    .nav-links a:hover::after,.nav-links a.is-active::after{width:100%}
+    .nav-cta{display:flex;align-items:center;gap:15px;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
+    .arrow-round{width:41px;height:41px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:18px;transition:transform .3s var(--ease),background .3s var(--ease)}
+    .nav-cta:hover .arrow-round{transform:rotate(45deg);background:var(--acid)}
+    .mobile-toggle{display:none;align-items:center;gap:8px;background:none;border:none;font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.06em;padding:9px}
+    .mobile-toggle-icon{width:18px;height:12px;position:relative;border-top:1.5px solid;border-bottom:1.5px solid}
+    .mobile-toggle-icon::after{content:"";position:absolute;top:4px;left:0;width:100%;border-top:1.5px solid}
+    .mobile-menu{display:none;border-top:1px solid var(--line);background:var(--paper)}
+    .mobile-menu-inner{display:flex;flex-direction:column;padding:20px 0 29px}
+    .mobile-menu a{padding:13px 0;font-size:24px;font-weight:700;letter-spacing:-.05em;border-bottom:1px solid var(--line)}
+    .mobile-menu a:last-child{border-bottom:none}
+    .mobile-menu.open{display:block}
+    .eyebrow{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.17em}
+    .eyebrow .num{color:#64705e;margin-right:15px}
+    .muted{color:var(--muted)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);padding:44px 0 50px;min-height:735px}
+    .hero-meta{display:flex;justify-content:space-between;align-items:flex-start;gap:25px}
+    .hero-stamp{display:flex;align-items:center;gap:10px;color:#535b51;font-size:10px;font-weight:750;letter-spacing:.07em;text-transform:uppercase;text-align:right}
+    .live-dot{width:8px;height:8px;border-radius:50%;background:#9cbd33;box-shadow:0 0 0 5px #9fbd3322;flex-shrink:0}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 318px;gap:25px;align-items:end;min-height:554px}
+    .hero-title{position:relative;z-index:1;font-size:clamp(84px,10.5vw,176px);font-weight:750;line-height:.88;letter-spacing:-.104em;margin:66px 0 22px}
+    .hero-title .serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.074em}
+    .hero-title .point{color:#95af34;letter-spacing:-.08em}
+    .hero-sub{display:flex;gap:30px;align-items:end;justify-content:space-between;margin-top:43px}
+    .hero-sub p{font-size:13px;font-weight:650;letter-spacing:-.02em;line-height:1.6;margin:0;max-width:310px}
+    .hero-index{font-size:10px;font-weight:750;letter-spacing:.11em;transform:translateY(-3px)}
+    .hero-aside{padding:0 0 25px 5px}
+    .system-sketch{position:relative;height:189px;border-top:1px solid var(--ink);margin-bottom:25px}
+    .sketch-track{position:absolute;top:56px;left:27px;right:27px;height:1px;border-top:1px dashed #82917a}
+    .sketch-nodes{display:flex;justify-content:space-between;position:relative;top:34px}
+    .sketch-nodes span{width:50px;height:50px;display:grid;place-items:center;border:1px solid #424c41;border-radius:50%;background:var(--paper);font:italic 27px/1 var(--serif)}
+    .sketch-nodes span:nth-child(2){background:var(--acid)}
+    .sketch-labels{display:flex;justify-content:space-between;margin-top:50px;font-size:9px;letter-spacing:.15em;font-weight:800}
+    .sketch-caption{position:absolute;bottom:-2px;left:0;font:italic 31px/1 var(--serif);letter-spacing:-.03em}
+    .hero-aside p{font-size:15px;line-height:1.75;max-width:280px;color:#4c554b;margin:0 0 28px}
+    .text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding-bottom:10px;border-bottom:1px solid currentColor;font-size:13px;font-weight:750;transition:gap .25s var(--ease)}
+    .text-link span{font-size:20px;font-weight:400;line-height:1;transition:transform .25s var(--ease)}
+    .text-link:hover span{transform:translate(4px,-3px)}
+    .ticker-shell{border-bottom:1px solid var(--line);overflow:hidden}
+    .ticker{min-height:55px;display:flex;align-items:center;justify-content:space-between;gap:25px;font-size:10px;white-space:nowrap;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .ticker b{font:italic 24px var(--serif);color:#8caa32;line-height:1}
+    .ticker span:nth-of-type(even){color:#868e80}
+    .section{scroll-margin-top:110px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:37px}
+    .section-title{font-size:clamp(52px,6vw,94px);font-weight:750;line-height:1;letter-spacing:-.085em;margin:17px 0 0}
+    .section-title em{font:italic 1em var(--serif);letter-spacing:-.03em}
+    .section-head-note{font:italic 24px/1.15 var(--serif);color:#616a5d;padding-bottom:8px}
+    .work{padding:109px 0 105px}
+    .featured{display:grid;grid-template-columns:48% 52%;min-height:590px;background:var(--night);color:var(--white);overflow:hidden;position:relative}
+    .feature-copy{padding:50px 52px 52px;display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:2}
+    .feature-meta{font-size:10px;letter-spacing:.16em;font-weight:800;color:#b6c2b0;display:flex;justify-content:space-between;gap:10px;width:100%}
+    .feature-middle{margin:auto 0 21px}
+    .feature-title{font-size:clamp(73px,8.2vw,128px);line-height:1;font-weight:700;letter-spacing:-.096em;margin:0 0 18px}
+    .feature-title em{font-family:var(--serif);font-weight:400}
+    .feature-description{max-width:410px;color:#c3ccc0;font-size:15px;line-height:1.77;margin:0 0 27px}
+    .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:31px}
+    .chip{border:1px solid #748074;color:#d7dfd0;border-radius:40px;padding:7px 12px;font-size:9px;letter-spacing:.1em;font-weight:700;text-transform:uppercase}
+    .feature-link{font-size:12px;font-weight:750;letter-spacing:.01em;border-bottom:1px solid var(--acid);padding-bottom:10px;display:inline-flex;align-items:center;gap:14px}
+    .feature-link .arrow{font-size:19px;color:var(--acid);transition:transform .25s var(--ease)}
+    .feature-link:hover .arrow{transform:translate(4px,-4px)}
+    .feature-visual{position:relative;overflow:hidden;display:grid;place-items:center;background:#c6d3aa;isolation:isolate}
+    .feature-visual::before{content:"";position:absolute;inset:0;opacity:.18;background-image:radial-gradient(#415c3c 1px,transparent 1px);background-size:22px 22px}
+    .orbit{position:absolute;width:740px;height:740px;border:1px solid rgba(64,91,58,.33);border-radius:50%;transform:translate(40px,-100px)}
+    .orbit.two{width:560px;height:560px}.orbit.three{width:385px;height:385px}
+    .visual-top{position:absolute;top:28px;right:30px;font:italic 20px var(--serif);color:#3d573d;z-index:1}
+    .phone-stage{transform:rotate(-9deg) translate(32px,64px);filter:drop-shadow(28px 32px 18px rgba(23,38,24,.22));transition:transform .7s var(--ease);z-index:2}
+    .featured:hover .phone-stage{transform:rotate(-5deg) translate(32px,45px)}
+    .phone{width:265px;height:520px;border:11px solid #252c29;border-radius:41px;background:#faf8f1;position:relative;overflow:hidden;color:#293326}
+    .phone::before{content:"";position:absolute;z-index:4;top:0;left:50%;transform:translateX(-50%);width:81px;height:19px;border-radius:0 0 13px 13px;background:#252c29}
+    .phone-screen{padding:42px 16px 15px}
+    .phone-status{display:flex;justify-content:space-between;font-size:10px;color:#687168}
+    .phone-logo{font-size:26px;color:#638541;font-weight:800;text-align:right;margin:17px 0 0;letter-spacing:-.07em}
+    .phone-sub{font-size:8px;color:#687768;text-align:right}
+    .phone-banner{background:#e6ecd6;border-radius:14px;margin:21px -2px 17px;padding:17px 14px;text-align:right}
+    .phone-banner strong{font-size:14px}.phone-banner small{display:block;font-size:8px;color:#60735f;margin-top:4px}
+    .phone-search{margin-top:17px;background:#fff;border:1px solid #e3e5d8;border-radius:8px;height:29px;text-align:right;color:#9aa297;padding:7px 9px;font-size:9px}
+    .phone-small-label{font-size:10px;font-weight:800;text-align:right;margin-bottom:11px}
+    .phone-tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .phone-tile{background:#ebe9e0;border-radius:9px;overflow:hidden}
+    .tile-image{height:89px;background:linear-gradient(135deg,#d3b9aa,#f0d9c6)}
+    .phone-tile:nth-child(2) .tile-image{background:linear-gradient(135deg,#a6b6a0,#e5dfcb)}
+    .phone-tile small{display:block;margin:9px 5px;text-align:right;font-size:8px;color:#5d6757}
+    .phone-dock{display:flex;justify-content:space-around;margin-top:24px;border-top:1px solid #d6dacd;padding-top:9px;color:#98a290;font-size:15px}
+    .visual-footnote{position:absolute;bottom:18px;left:20px;font-size:9px;font-weight:750;color:#3e5940;letter-spacing:.07em;z-index:3}
+    .work-detail{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:25px 0 26px;border-bottom:1px solid var(--line)}
+    .work-detail .detail-left{font-size:12px;font-weight:750;color:#5d655a;text-transform:uppercase;letter-spacing:.1em}
+    .work-detail .detail-right{font-size:13px;max-width:570px;line-height:1.55;color:#4e554c}
+    .secondary-work{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:17px}
+    .secondary-card{min-height:500px;position:relative;overflow:hidden;display:flex;flex-direction:column;isolation:isolate}
+    .secondary-card.offline{background:#d9e0cb}
+    .secondary-card.infrastructure{background:#dbdad0}
+    .secondary-card-content{padding:34px 36px;position:relative;z-index:2}
+    .secondary-card-meta{font-size:10px;font-weight:800;letter-spacing:.13em;color:#5f6a5a}
+    .secondary-card h3{font-size:clamp(42px,4.5vw,68px);letter-spacing:-.08em;line-height:1;margin:18px 0 12px}
+    .secondary-card h3 em{font-family:var(--serif);font-weight:400}
+    .secondary-card p{font-size:13px;line-height:1.65;color:#515d50;max-width:360px;margin:0}
+    .secondary-card .text-link{margin-top:24px;font-size:12px}
+    .invoice{width:280px;height:205px;position:absolute;bottom:-6px;right:39px;background:#fafaf4;border:1px solid #232d25;border-radius:13px 13px 0 0;transform:rotate(-8deg);box-shadow:22px 20px 0 rgba(36,52,31,.09);overflow:hidden;transition:transform .6s var(--ease)}
+    .secondary-card:hover .invoice{transform:rotate(-4deg) translateY(-6px)}
+    .invoice-head{display:flex;justify-content:space-between;align-items:center;background:#252c25;color:#f4f7ea;padding:15px 15px;font-size:12px;font-weight:750}
+    .invoice-head span:last-child{font-size:9px;color:#cbea5b}
+    .invoice-body{padding:14px}
+    .invoice-row{display:flex;justify-content:space-between;border-bottom:1px solid #e1e4d8;padding:6px 0;font-size:10px;color:#626b61}
+    .invoice-row.total{font-size:12px;font-weight:800;color:#1f2a20;border:0}
+    .infra-preview{height:190px;position:relative;bottom:auto;left:auto;right:auto;margin:20px 30px 30px;flex-shrink:0;border:1px solid #8a9886;background:#e8eadf;overflow:hidden;padding:18px;transform:rotate(3deg);transition:transform .6s var(--ease)}
+    .secondary-card:hover .infra-preview{transform:rotate(0) translateY(-5px)}
+    .infra-preview-top{display:flex;justify-content:space-between;font-size:10px;font-weight:800;letter-spacing:.12em;padding-bottom:18px;border-bottom:1px solid #a3afa1}
+    .infra-flow{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-top:34px}
+    .infra-flow span{flex:1;text-align:center;border:1px solid #8f9d8c;border-radius:25px;background:#f4f6ec;padding:10px 1px;font-size:9px;font-weight:800}
+    .infra-flow i{font-size:14px;font-style:normal}
+    .infra-preview-foot{display:flex;justify-content:space-between;font-size:9px;margin-top:18px;color:#697466}
+    .story{background:var(--acid);padding:92px 0 104px;scroll-margin-top:83px}
+    .story-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:85px;align-items:end}
+    .story h2{font-size:clamp(60px,7.5vw,118px);letter-spacing:-.095em;line-height:.95;font-weight:750;margin:23px 0 0}
+    .story h2 em{font-family:var(--serif);font-weight:400}
+    .story-intro{font-size:18px;line-height:1.65;max-width:485px;margin:0 0 45px}
+    .story-rows{border-top:1px solid rgba(29,38,25,.5)}
+    .story-row{border-bottom:1px solid rgba(29,38,25,.38);padding:19px 0;display:flex;justify-content:space-between;gap:15px;font-weight:800;font-size:12px;letter-spacing:.035em}
+    .story-row span:last-child{font-weight:550;color:#4f602e;letter-spacing:0;text-align:right}
+    .systems{background:var(--night);color:var(--white);padding:102px 0 113px;scroll-margin-top:83px}
+    .systems .section-head{margin-bottom:56px}
+    .systems .section-head-note{color:#b9c3b2}
+    .system-layout{display:grid;grid-template-columns:280px 1fr;gap:68px}
+    .system-nav{display:flex;flex-direction:column;align-self:start;border-top:1px solid #67736a}
+    .system-step{display:flex;align-items:center;gap:15px;min-height:71px;border:0;border-bottom:1px solid #627061;background:transparent;text-align:left;color:#aeb9ad;font-size:14px;font-weight:750;transition:color .2s,background .2s;padding:0 10px}
+    .system-step .step-index{font-size:10px;letter-spacing:.11em;width:28px}
+    .system-step .step-arrow{margin-left:auto;color:var(--acid);opacity:0;transform:translateX(-4px);transition:transform .25s,opacity .25s}
+    .system-step:hover,.system-step[aria-pressed="true"]{color:var(--white);background:#303a31}
+    .system-step[aria-pressed="true"] .step-arrow{opacity:1;transform:none}
+    .system-panel{display:grid;grid-template-columns:1fr;align-content:start;min-height:355px}
+    .panel-top{display:flex;justify-content:space-between;gap:18px;padding:0 0 16px;border-bottom:1px solid #606c62;color:#b7c1b4;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+    .process-diagram{display:flex;align-items:center;justify-content:space-between;gap:4px;margin:53px 0 49px;min-width:0}
+    .process-node{display:grid;place-items:center;text-align:center;height:87px;min-width:0;flex:1;border:1px solid #6a796b;border-radius:50px;font-size:11px;font-weight:750;color:#e2ebdc;transition:background .25s,border-color .25s,color .25s}
+    .process-node.active{background:var(--acid);border-color:var(--acid);color:#283126}
+    .process-path{height:1px;flex:0 0 35px;background:repeating-linear-gradient(90deg,#91a08c 0 3px,transparent 3px 9px)}
+    .process-bottom{display:flex;justify-content:space-between;gap:40px;align-items:end}
+    .process-bottom h3{font-size:clamp(30px,4vw,55px);letter-spacing:-.07em;line-height:1.05;font-weight:650;margin:0;max-width:410px}
+    .process-bottom p{font-size:13px;line-height:1.8;max-width:350px;margin:0;color:#afbbad}
+    .footnote{margin-top:51px;font-size:10px;color:#899a89;letter-spacing:.06em}
+    .about{padding:115px 0 124px;scroll-margin-top:83px}
+    .about-layout{display:grid;grid-template-columns:1fr .84fr;gap:11vw}
+    .about-text{font-size:clamp(27px,3.8vw,57px);line-height:1.19;letter-spacing:-.065em;font-weight:650;margin:38px 0 26px}
+    .about-text em{font-family:var(--serif);font-weight:400}
+    .about-caption{font-size:14px;line-height:1.7;color:#586055;max-width:490px}
+    .stack-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--ink);padding:11px 0 21px}
+    .stack-heading strong{font-size:11px;letter-spacing:.14em}
+    .stack-heading span{font-family:var(--serif);font-style:italic;font-size:24px}
+    .stack-item{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0;border-bottom:1px solid var(--line)}
+    .stack-item strong{font-size:18px;font-weight:700;letter-spacing:-.035em}
+    .stack-item span{font-size:12px;color:#667063;max-width:260px;text-align:right}
+    .stack-bottom{display:flex;align-items:center;gap:10px;color:#6a7166;font-size:11px;margin-top:23px}
+    .stack-bottom b{width:7px;height:7px;background:#9ebb35;border-radius:50%}
+    .footer{background:var(--night);color:var(--white);padding:75px 0 29px;scroll-margin-top:83px}
+    .footer-lead{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .footer h2{font-size:clamp(75px,11.5vw,180px);line-height:.88;letter-spacing:-.10em;font-weight:700;margin:25px 0 83px}
+    .footer h2 em{font-family:var(--serif);font-weight:400;color:var(--acid)}
+    .footer-cta{height:116px;width:116px;border-radius:50%;background:var(--acid);color:var(--ink);display:grid;place-items:center;font-size:51px;flex-shrink:0;transition:transform .4s var(--ease),background .3s}
+    .footer-cta:hover{transform:rotate(45deg);background:var(--white)}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid #5c6a5c;padding-top:28px;font-size:10px;font-weight:650;letter-spacing:.065em;color:#bbc7b8}
+    .footer-links{display:flex;gap:18px 25px;flex-wrap:wrap;align-items:center}
+    .footer-links a:hover{color:var(--acid)}
+    .footer-signature{font-family:var(--serif);font-style:italic;font-weight:400;font-size:18px;letter-spacing:0}
+    dialog{width:min(620px,calc(100% - 34px));border:none;padding:0;background:var(--paper);color:var(--ink);box-shadow:0 30px 100px #0009}
+    dialog::backdrop{background:rgba(12,18,12,.74);backdrop-filter:blur(5px)}
+    .dialog-inner{padding:32px}
+    .dialog-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:19px;border-bottom:1px solid var(--line)}
+    .dialog-top span{font-size:11px;font-weight:750;letter-spacing:.15em}
+    .dialog-close{background:none;border:1px solid #6e776a;border-radius:50%;height:39px;width:39px;font-size:20px}
+    .dialog-inner h2{font-size:clamp(50px,8vw,83px);line-height:1;letter-spacing:-.085em;margin:35px 0 18px}
+    .dialog-inner h2 em{font-family:var(--serif);font-weight:400}
+    .dialog-inner p{font-size:15px;line-height:1.8;color:#505a4e;max-width:520px}
+    .dialog-features{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:27px 0}
+    .dialog-features div{background:var(--paper);padding:17px;font-size:12px;font-weight:650}
+    .dialog-note{font-size:11px!important;color:#6b7568!important}
+    .js-enabled .reveal{opacity:1;transform:none}
+    .js-enabled .reveal.is-visible{animation:subtle-entrance .75s var(--ease) both}
+    @keyframes subtle-entrance{from{opacity:.88;transform:translateY(10px)}to{opacity:1;transform:none}}
+    @media(min-width:1600px){.hero-title{font-size:172px}}
+    @media(max-width:1200px){.container{width:calc(100% - 74px)}.hero-grid{grid-template-columns:minmax(0,1fr) 280px}.hero-title{font-size:10.5vw}.feature-copy{padding:43px 38px}.feature-title{font-size:8vw}.story-grid{gap:45px}.system-layout{gap:35px}.nav-links{gap:23px;margin-right:18px}.process-path{flex-basis:20px}}
+    @media(max-width:850px){.container{width:calc(100% - 48px)}.nav-links{gap:17px;margin-right:0}.nav-links a{font-size:12px}.hero-grid{grid-template-columns:1fr 235px;min-height:470px}.hero{min-height:unset}.hero-title{font-size:10.9vw}.system-sketch{height:165px}.sketch-caption{font-size:26px}.hero-aside p{font-size:13px}.featured{grid-template-columns:49% 51%}.feature-title{font-size:8.4vw}.feature-copy{padding:30px 26px}.feature-description{font-size:13px}.phone-stage{transform:rotate(-9deg) translate(25px,75px) scale(.84)}.featured:hover .phone-stage{transform:rotate(-6deg) translate(25px,59px) scale(.84)}.story-grid{grid-template-columns:1fr 1fr;gap:30px}.story-intro{font-size:15px}.system-layout{grid-template-columns:205px 1fr;gap:25px}.system-step{font-size:12px}.process-node{font-size:9px;height:65px}.process-path{flex-basis:12px}.process-diagram{margin:48px 0}.about-layout{gap:6vw}}
+    @media(max-width:670px){
+      .container{width:calc(100% - 38px)}.nav{height:69px}.brand{font-size:16px}.brand-mark{font-size:35px}.nav-links,.nav-cta{display:none}.mobile-toggle{display:inline-flex}
+      .hero{padding:28px 0 39px}.hero-meta{align-items:start}.eyebrow{font-size:9px;letter-spacing:.12em}.eyebrow .num{margin-right:7px}.hero-stamp{font-size:9px;max-width:128px;line-height:1.45}.hero-grid{display:block;min-height:0}.hero-title{font-size:clamp(64px,12.5vw,96px);margin:75px 0 23px;line-height:.94;letter-spacing:-.092em}.hero-sub{margin:17px 0 38px}.hero-sub p{font-size:11px}.hero-aside{padding:0}.system-sketch{display:none}.hero-aside p{font-size:15px;max-width:430px;line-height:1.6;margin-bottom:23px}.ticker{gap:17px;font-size:9px;min-height:52px;justify-content:space-around}.ticker span:nth-of-type(n+3),.ticker b:nth-of-type(n+3){display:none}
+      .work{padding:72px 0 72px}.section-title{font-size:clamp(48px,10vw,68px)}.section-head-note{font-size:18px}.section-head{align-items:end;gap:10px;margin-bottom:25px}.featured{display:block;min-height:0}.feature-copy{padding:29px 25px 37px;min-height:450px}.feature-middle{margin:68px 0 14px}.feature-title{font-size:clamp(72px,16vw,100px)}.feature-description{font-size:14px}.feature-visual{height:420px}.phone-stage{transform:rotate(-9deg) translate(12px,78px) scale(.89)}.featured:hover .phone-stage{transform:rotate(-7deg) translate(12px,61px) scale(.89)}.work-detail{display:block;padding:21px 0}.work-detail .detail-right{margin-top:11px}.secondary-work{grid-template-columns:1fr}.secondary-card{min-height:460px}.secondary-card.infrastructure{min-height:0}.infra-preview{margin:8px 25px 27px;height:185px}.secondary-card h3{font-size:57px}.invoice{width:269px;right:31px}.story{padding:70px 0 72px}.story-grid{display:block}.story h2{font-size:clamp(62px,12vw,90px)}.story-intro{margin:43px 0 30px;font-size:16px}.story-row{font-size:11px}.systems{padding:70px 0 78px}.systems .section-head{margin-bottom:36px}.system-layout{display:block}.system-nav{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:38px}.system-step{min-height:54px;padding:0 6px;font-size:11px}.system-step .step-index{width:20px}.panel-top{font-size:9px}.process-diagram{margin:40px 0}.process-node{height:62px;font-size:9px}.process-path{flex-basis:7px}.process-bottom{display:block}.process-bottom h3{font-size:38px}.process-bottom p{font-size:13px;margin-top:16px}.footnote{margin-top:34px;font-size:9px}.about{padding:73px 0 85px}.about-layout{display:block}.about-text{font-size:39px;margin:27px 0 20px}.about-caption{font-size:14px}.stack{margin-top:60px}.stack-item strong{font-size:16px}.stack-item span{font-size:11px;max-width:210px}.footer{padding:65px 0 25px}.footer h2{font-size:clamp(65px,12vw,90px);margin:25px 0 54px}.footer-cta{height:70px;width:70px;font-size:36px}.footer-bottom{flex-wrap:wrap;row-gap:22px}.footer-signature{margin-left:auto}
+    }
+    @media(max-width:370px){.hero-title{font-size:59px}.section-title{font-size:45px}.feature-title{font-size:65px}.feature-copy{padding:25px 20px}.feature-description{font-size:13px}.feature-meta{font-size:9px}.story h2{font-size:59px}.process-node{font-size:8px}.process-path{flex-basis:4px}.footer h2{font-size:57px}.system-step{font-size:10px}.system-step .step-index{display:none}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.js-enabled .reveal{opacity:1;transform:none}}
+  
+.preview-switch{position:fixed;right:18px;bottom:20px;z-index:300;background:#cbea5b;color:#20231f;padding:13px 18px;border-radius:999px;font:700 12px Arial, sans-serif;border:1px solid #20231f;box-shadow:0 10px 32px #0002;text-decoration:none} .preview-switch:hover{background:#e3ff8a}
+@media (max-width:670px){.secondary-card.offline{min-height:570px}}
+</style>
+<script>document.documentElement.classList.add('js-enabled');</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top-strip"></div><div aria-hidden="true" class="scroll-progress" id="scroll-progress"></div>
+<header class="site-header" id="site-header">
+<div class="container nav">
+<a aria-label="Mohamed, home" class="brand" href="#top"><span class="brand-mark">m<span class="brand-dot">.</span></span><span>Mohamed Emad</span></a>
+<nav aria-label="Main navigation" class="nav-links"><a href="#work">Work</a><a href="#thinking">Approach</a><a href="#systems">Systems</a><a href="#about">About</a><a href="https://drive.google.com/file/d/13KMdfANje1xkXC7gkaoVVqnyCz-ekDZJ/view" target="_blank" rel="noopener noreferrer">CV ↗</a></nav>
+<a class="nav-cta" href="#contact">LET'S CONNECT <span aria-hidden="true" class="arrow-round">↗</span></a>
+<button aria-controls="mobile-menu" aria-expanded="false" class="mobile-toggle" id="menu-toggle" type="button"><span aria-hidden="true" class="mobile-toggle-icon"></span><span id="menu-toggle-text">Menu</span></button>
+</div>
+<nav aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" inert=""><div class="container mobile-menu-inner"><a href="#work">Work ↗</a><a href="#thinking">Approach ↗</a><a href="#systems">Systems ↗</a><a href="#about">About ↗</a><a href="#contact">Contact ↗</a><a href="https://drive.google.com/file/d/13KMdfANje1xkXC7gkaoVVqnyCz-ekDZJ/view" target="_blank" rel="noopener noreferrer">CV ↗</a></div></nav>
+</header>
+<main id="main">
+<section aria-labelledby="hero-title" class="hero section" id="top">
+<div class="container">
+<div class="hero-meta"><div class="eyebrow"><span class="num">01 / INTRODUCTION</span> PRODUCT · ENGINEERING · OPERATIONS</div><div class="hero-stamp"><span class="live-dot"></span><span>REAL PRODUCTS.<br/>REAL RESPONSIBILITY.</span></div></div>
+<div class="hero-grid">
+<div><h1 class="hero-title" id="hero-title">I build<br/>the <span class="serif">whole</span><br/>thing<span class="point">.</span></h1><div class="hero-sub"><p>MOHAMED / FULL-STACK SOFTWARE ENGINEER<br/>FROM FIRST COMMIT TO PRODUCTION.</p><span class="hero-index">( 01 — 04 )</span></div></div>
+<div class="hero-aside">
+<div aria-hidden="true" class="system-sketch"><div class="sketch-track"></div><div class="sketch-nodes"><span>✳</span><span>↗</span><span>✓</span></div><div class="sketch-labels"><span>IDEA</span><span>BUILD</span><span>SHIP</span></div><div class="sketch-caption">End to end.</div></div>
+<p>From the first screen to the infrastructure behind it. I turn ideas into dependable software — and stay for what happens after launch.</p>
+<a class="text-link" href="#work">Explore selected work <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+</div>
+</section>
+<div class="ticker-shell"><div aria-label="Areas of expertise" class="container ticker"><span>Product thinking</span><b aria-hidden="true">✳</b><span>Software engineering</span><b aria-hidden="true">✳</b><span>Production infrastructure</span><b aria-hidden="true">✳</b><span>Systems that last</span></div></div>
+<section aria-labelledby="work-title" class="work section" id="work">
+<div class="container">
+<div class="section-head reveal"><div><div class="eyebrow"><span class="num">02 / SELECTED WORK</span> BUILT FOR THE REAL WORLD</div><h2 class="section-title" id="work-title">Selected <em>work.</em></h2></div><div class="section-head-note">Built. Shipped.<br/>Running.</div></div>
+<article aria-labelledby="jameelaa-title" class="featured reveal">
+<div class="feature-copy"><div class="feature-meta"><span>001 / FEATURED PROJECT</span><span>LIVE PRODUCT ↗</span></div><div class="feature-middle"><h3 class="feature-title" id="jameelaa-title">Jameelaa<em>.</em></h3><p class="feature-description">A real-world service-booking platform connecting people with specialists. Mobile experiences, complex booking flows, payments, back-office operations, and production infrastructure — engineered as one system.</p><div class="chip-row"><span class="chip">Flutter</span><span class="chip">Laravel</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span></div><a class="feature-link" href="https://play.google.com/store/apps/details?id=com.jameelaa.app" rel="noopener noreferrer" target="_blank">View live product on Google Play <span aria-hidden="true" class="arrow">↗</span></a><a class="case-study-cta" href="jameelaa.html">Read the full case study ↗</a></div></div>
+<div aria-label="Original concept artwork representing the Jameelaa mobile app, not an actual screenshot" class="feature-visual"><div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div><div class="visual-top">Jameelaa / Mobile experience</div><div class="phone-stage"><div class="phone"><div class="phone-screen"><div class="phone-status"><span>9:41</span><span>●●● ▰</span></div><div class="phone-logo" dir="rtl" lang="ar">جميلة</div><div class="phone-sub" dir="rtl" lang="ar">خدماتك في المكان والوقت المناسب</div><div class="phone-banner" dir="rtl" lang="ar"><strong>إيه الخدمة اللي محتاجاها؟</strong><small>اختاري الخدمة اللي تناسبك</small><div class="phone-search">ابحثي عن خدمة...</div></div><div class="phone-small-label" dir="rtl" lang="ar">اكتشفي الخدمات</div><div class="phone-tiles" dir="rtl" lang="ar"><div class="phone-tile"><div class="tile-image"></div><small>خدمات التجميل</small></div><div class="phone-tile"><div class="tile-image"></div><small>العناية الشخصية</small></div></div><div aria-hidden="true" class="phone-dock"><span>⌂</span><span>◇</span><span>♡</span><span>☻</span></div></div></div></div><div class="visual-footnote">ILLUSTRATIVE INTERFACE CONCEPT / NOT AN APP SCREENSHOT</div></div>
+</article>
+<div class="work-detail reveal"><div class="detail-left">Beyond the interface <span aria-hidden="true">↗</span></div><div class="detail-right">Architecture, asynchronous workflows, API compatibility, secure delivery, and keeping production healthy matter just as much as the screens.</div></div>
+<div class="secondary-work">
+<article aria-labelledby="production-notes-title" class="secondary-card offline reveal"><div class="secondary-card-content"><div class="secondary-card-meta">002 / ENGINEERING NOTES · DELIVERY</div><h3 id="production-notes-title">Production notes.</h3><p>A closer look at architecture, releases, background work, and what it takes to keep a production product reliable.</p><a class="secondary-link" href="jameelaa.html">Read the case study ↗</a></div><div aria-hidden="true" class="invoice editorial-diagram"><div class="invoice-top">ENGINEERING NOTES  /  01</div><div class="invoice-row"><span>DESIGN</span><strong>→</strong><span>BUILD</span></div><div class="invoice-row"><span>TEST</span><strong>→</strong><span>SHIP</span></div><div class="invoice-total"><span>OPERATE</span><strong>↗</strong></div></div></article>
+<article aria-labelledby="infra-title" class="secondary-card infrastructure reveal"><div class="secondary-card-content"><div class="secondary-card-meta">003 / ENGINEERING FOCUS · DELIVERY</div><h3 id="infra-title">Behind <em>the build.</em></h3><p>What happens after “it works locally”: CI checks, Docker deployments, monitoring, rollback strategies, and systems that can be maintained.</p><a class="text-link" href="#systems">Explore the engineering <span aria-hidden="true">↗</span></a></div><div aria-hidden="true" class="infra-preview"><div class="infra-preview-top"><span>DEPLOYMENT FLOW / 001</span><span>HEALTHY ●</span></div><div class="infra-flow"><span>CODE</span><i>→</i><span>TEST</span><i>→</i><span>DEPLOY</span><i>→</i><span>MONITOR</span></div><div class="infra-preview-foot"><span>VERSIONED &amp; REPEATABLE</span><span>ROLLBACK READY ↗</span></div></div></article>
+</div>
+</div>
+</section>
+<section aria-labelledby="thinking-title" class="story section" id="thinking"><div class="container story-grid"><div class="reveal"><div class="eyebrow">03 / THE APPROACH</div><h2 id="thinking-title">Think deeper.<br/>Build <em>better.</em></h2></div><div class="reveal"><p class="story-intro">Good engineering isn't about adding complexity. It's knowing what to build, making the right tradeoffs, and being accountable for the result once real people start using it.</p><div class="story-rows"><div class="story-row"><span>01 / EXPERIENCE</span><span>React · Vue · TypeScript</span></div><div class="story-row"><span>02 / SYSTEMS</span><span>Laravel · Node.js · PostgreSQL</span></div><div class="story-row"><span>03 / DELIVERY</span><span>Docker · CI/CD · Monitoring</span></div></div></div></div></section>
+<section aria-labelledby="systems-title" class="systems section" id="systems"><div class="container"><div class="section-head reveal"><div><div class="eyebrow"><span class="num">04 / ENGINEERING MINDSET</span> BEYOND THE SCREEN</div><h2 class="section-title" id="systems-title">The <em>invisible</em> work.</h2></div><div class="section-head-note">The details that<br/>make things last.</div></div>
+<div class="system-layout reveal"><div aria-label="Explore engineering stages" class="system-nav"><button aria-pressed="true" class="system-step" data-step="0" type="button"><span class="step-index">01</span>Product decisions <span aria-hidden="true" class="step-arrow">↗</span></button><button aria-pressed="false" class="system-step" data-step="1" type="button"><span class="step-index">02</span>Architecture <span aria-hidden="true" class="step-arrow">↗</span></button><button aria-pressed="false" class="system-step" data-step="2" type="button"><span class="step-index">03</span>Delivery <span aria-hidden="true" class="step-arrow">↗</span></button><button aria-pressed="false" class="system-step" data-step="3" type="button"><span class="step-index">04</span>Reliability <span aria-hidden="true" class="step-arrow">↗</span></button></div>
+<div aria-live="polite" class="system-panel" id="system-panel"><div class="panel-top"><span id="panel-kicker">01 / GOOD PRODUCTS START WITH CLARITY</span><span>FROM IDEA → PRODUCTION</span></div><div aria-hidden="true" class="process-diagram"><span class="process-node active">DISCOVER</span><span class="process-path"></span><span class="process-node">DESIGN</span><span class="process-path"></span><span class="process-node">BUILD</span><span class="process-path"></span><span class="process-node">RUN</span></div><div class="process-bottom"><h3 id="panel-title">Build the right thing before building everything.</h3><p id="panel-description">Understand the problem, map the flows, and choose the smallest system that can do the job properly. Complexity should earn its place.</p></div></div></div><div class="footnote">AN INTERACTIVE LOOK AT HOW I APPROACH SOFTWARE — SELECT A STAGE TO EXPLORE.</div>
+</div></section>
+<section aria-labelledby="about-title" class="about section" id="about"><div class="container about-layout"><div class="reveal"><div class="eyebrow"><span class="num">05 / ABOUT ME</span> THE PERSON BEHIND THE CODE</div><h2 class="about-text" id="about-title">A developer who cares about <em>what happens after</em> the code is written.</h2><p class="about-caption">I'm Mohamed Emad, a full-stack software engineer working across the product lifecycle — from UI and backend design to deployment, security, and day-to-day operations. I like clean ideas, thoughtful decisions, and software that earns its place in the real world.</p></div><div class="stack reveal"><div class="stack-heading"><strong>TECHNOLOGIES</strong><span>The practical stack.</span></div><div class="stack-item"><strong>Interfaces</strong><span>React / Vue / Flutter</span></div><div class="stack-item"><strong>Backend &amp; APIs</strong><span>Laravel / Node.js / NestJS</span></div><div class="stack-item"><strong>Data &amp; systems</strong><span>PostgreSQL / Redis / Queues</span></div><div class="stack-item"><strong>Shipping</strong><span>Docker / GitHub Actions / CI/CD</span></div><div class="stack-item"><strong>Operations</strong><span>Linux / Observability / Security</span></div><div class="stack-bottom"><b></b> Focused on shipping, not collecting buzzwords.</div></div></div></section>
+</main>
+<footer class="footer section" id="contact"><div class="container"><div class="eyebrow">06 / SOMETHING WORTH BUILDING?</div><div class="footer-lead"><h2>Let's make<br/>it <em>real.</em></h2><a aria-label="Email Mohamed about a project" class="footer-cta" href="mailto:mohamedelghool671@gmail.com?subject=Project%20inquiry" title="Email Mohamed">↗</a></div><div class="footer-bottom"><span>© <span id="current-year">2026</span> MOHAMED · FROM IDEA TO PRODUCTION</span><div class="footer-links"><a href="mailto:mohamedelghool671@gmail.com?subject=Project%20inquiry">EMAIL ↗</a><a href="https://www.linkedin.com/in/mohamedemaddev/" rel="noopener noreferrer" target="_blank">LINKEDIN ↗</a><a href="https://github.com/eng-mohamedemad-dev" rel="noopener noreferrer" target="_blank">GITHUB ↗</a><a href="https://drive.google.com/file/d/13KMdfANje1xkXC7gkaoVVqnyCz-ekDZJ/view" rel="noopener noreferrer" target="_blank">VIEW CV ↗</a></div><span class="footer-signature">Made with intent.</span></div></div></footer>
+
+<script>
+(() => {
+  'use strict';
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const progress = document.getElementById('scroll-progress');
+  const menuButton = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const menuLabel = document.getElementById('menu-toggle-text');
+  const closeMenu = () => { menu.classList.remove('open'); menu.inert = true; menuButton.setAttribute('aria-expanded', 'false'); menuLabel.textContent = 'Menu'; };
+  menuButton.addEventListener('click', () => { const open = menu.classList.toggle('open'); menu.inert = !open; menuButton.setAttribute('aria-expanded', String(open)); menuLabel.textContent = open ? 'Close' : 'Menu'; });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  window.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize', () => { if(window.innerWidth > 670) closeMenu(); }, {passive:true});
+  let scrollQueued = false;
+  const updateScroll = () => {
+    const max = Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+    progress.style.width = (window.scrollY / max * 100).toFixed(2) + '%';
+    scrollQueued = false;
+  };
+  window.addEventListener('scroll', () => { if (!scrollQueued) { scrollQueued = true; requestAnimationFrame(updateScroll); } }, {passive:true});
+  window.addEventListener('resize', updateScroll, {passive:true}); updateScroll();
+  const items = document.querySelectorAll('.reveal');
+  if (reducedMotion || !('IntersectionObserver' in window)) { items.forEach(item => item.classList.add('is-visible')); }
+  else { const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }, {threshold:.07,rootMargin:'0px 0px 35px 0px'}); items.forEach(item => observer.observe(item)); }
+  const steps = [
+    {kicker:'01 / GOOD PRODUCTS START WITH CLARITY',title:'Build the right thing before building everything.',description:'Understand the problem, map the flows, and choose the smallest system that can do the job properly. Complexity should earn its place.',nodes:['DISCOVER','DESIGN','BUILD','RUN']},
+    {kicker:'02 / SYSTEMS THAT CAN CHANGE SAFELY',title:'Design for real use, not just the happy path.',description:'Clear boundaries, reliable APIs, background work, and data models that can evolve without surprising the products already in use.',nodes:['CLIENT','API','QUEUE','DATA']},
+    {kicker:'03 / EVERY RELEASE IS AN ENGINEERING DECISION',title:'Shipping should be boring. In the best way.',description:'Versioned changes, automated tests, deliberate deployments, and a clear way back if a release does not behave as expected.',nodes:['COMMIT','TEST','DEPLOY','VERIFY']},
+    {kicker:'04 / THE JOB DOES NOT END AT DEPLOY',title:'Watch it. Understand it. Keep it healthy.',description:'Observability, security, operational discipline, and incident readiness keep a product dependable long after launch day.',nodes:['LOGS','METRICS','ALERTS','IMPROVE']}
+  ];
+  const buttons = [...document.querySelectorAll('.system-step')];
+  const diagramNodes = [...document.querySelectorAll('.process-node')];
+  let activeStep = 0;
+  const renderStep = index => {
+    if (index === activeStep && buttons[index].getAttribute('aria-pressed') === 'true') return;
+    activeStep = index;
+    buttons.forEach((button,i) => button.setAttribute('aria-pressed', String(i === index)));
+    const s = steps[index];
+    document.getElementById('panel-kicker').textContent = s.kicker;
+    document.getElementById('panel-title').textContent = s.title;
+    document.getElementById('panel-description').textContent = s.description;
+    diagramNodes.forEach((node,i) => {node.textContent = s.nodes[i]; node.classList.toggle('active', i === index);});
+  };
+  buttons.forEach((button,i) => button.addEventListener('click', () => renderStep(i)));
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+})();
+</script>
+<a class="preview-switch" href="classic.html">↗ &nbsp; Compare with Edition 01</a></body>
+</html>

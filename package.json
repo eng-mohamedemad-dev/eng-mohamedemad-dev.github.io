@@ -1,0 +1,27 @@
+{
+  "name": "mohamed-emad-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build",
+    "audit:seo": "node scripts/verify-seo.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "@next/mdx": "16.4.6",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/mdx": "^2.0.13"
+  }
+}
