@@ -16,8 +16,8 @@ export function ClientBehavior({ edition }: {edition:'classic'|'evolved'}) {
     const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const reveals=Array.from(root.querySelectorAll<HTMLElement>('.reveal'));
     if (reduced || !('IntersectionObserver' in window)) reveals.forEach(el=>el.classList.add('show','is-visible'));
-    const observer=(!reduced && 'IntersectionObserver' in window) ? new IntersectionObserver(entries=>{
-      for(const entry of entries) if(entry.isIntersecting){entry.target.classList.add('show','is-visible');observer.unobserve(entry.target)}
+    const observer=(!reduced && 'IntersectionObserver' in window) ? new IntersectionObserver((entries, currentObserver)=>{
+      for(const entry of entries) if(entry.isIntersecting){entry.target.classList.add('show','is-visible');currentObserver.unobserve(entry.target)}
     },{threshold:.06,rootMargin:'0px 0px 28px 0px'}):null;
     reveals.forEach(el=>observer?.observe(el));
 
