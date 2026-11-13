@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: {absolute: 'Mohamed Emad — Full-Stack Software Engineer'},
   description: SITE_DESCRIPTION,
   alternates: {canonical: absoluteUrl('/')},
-  openGraph: {url: absoluteUrl('/')},
 };
 
 export default function Page() {
