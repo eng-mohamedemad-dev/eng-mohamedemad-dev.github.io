@@ -13,50 +13,47 @@ const expertise = [
   {num:'03',icon:'↗',title:'DevOps & delivery',detail:'Reliable releases, observable services and practical infrastructure.',stack:'Docker · CI/CD · Linux · Cloudflare'},
   {num:'04',icon:'◇',title:'System design',detail:'From the first requirement to the production-ready product.',stack:'Scalability · Reliability · Security'},
 ];
-const technologies = [
-  {name:'Laravel',mark:'L',tone:'red'}, {name:'React',mark:'⚛',tone:'cyan'}, {name:'Vue',mark:'V',tone:'green'},
-  {name:'Node.js',mark:'N',tone:'green'}, {name:'PostgreSQL',mark:'Pg',tone:'blue'}, {name:'Redis',mark:'R',tone:'red'},
-  {name:'Docker',mark:'D',tone:'cyan'}, {name:'GitHub Actions',mark:'GH',tone:'muted'}, {name:'Linux',mark:'>',tone:'orange'},
+const toolbox = [
+  {area:'Web interfaces', tools:'React · Vue · TypeScript'},
+  {area:'APIs and data', tools:'Laravel · Node.js · PostgreSQL · Redis'},
+  {area:'Delivery and operations', tools:'Docker · GitHub Actions · Linux · Cloudflare'},
 ];
-export function DarkExperience(){
+export function DarkExperience({workBase='/work'}:{workBase?:string}={}){
   const featured=PROJECTS[0];
   return <div className="edition-dark">
     <a className="dark-skip" href="#main">Skip to content</a>
     <DarkNavigation/>
     <main id="main">
-      <section className="dark-hero" aria-labelledby="dark-hero-title">
-        <div className="dark-hero-photo" style={{backgroundImage:`url(${asset('/dark/workspace.webp')})`}} role="img" aria-label="Warmly lit software development workspace with laptop"/>
-        <div className="dark-hero-shade"/>
-        <div className="dark-container dark-hero-content">
-          <span className="dark-eyebrow"><span className="dark-pulse"/>FULL-STACK · BACKEND · DEVOPS</span>
-          <p className="dark-kicker">Hi, I’m Mohamed Emad.</p>
-          <h1 id="dark-hero-title">Engineering<br/><span>what&apos;s next.</span></h1>
-          <p className="dark-hero-description">I build digital products from first idea to production — thoughtful interfaces, reliable backends, and infrastructure that keeps them running.</p>
+      <section className="amber-hero dark-container" aria-labelledby="dark-hero-title">
+        <div className="amber-intro">
+          <p className="amber-credit">Mohamed Emad <span>/</span> Software engineer</p>
+          <h1 id="dark-hero-title">From first<br/>commit to<br/><em>production.</em></h1>
+          <p className="amber-lede">I build full-stack products and run the infrastructure behind them. My work spans Laravel APIs, web interfaces and production releases.</p>
           <div className="dark-hero-cta">
-            <a href="#work" className="dark-button dark-button-primary">Explore my work <span aria-hidden="true">↗</span></a>
-            <a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" className="dark-button dark-button-outline">WhatsApp <WhatsAppIcon/></a>
-          </div>
-          <div className="dark-social" aria-label="Professional profiles">
-            <a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-            <a href={PROFILE.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</a>
-            <a href={PROFILE.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="#work" className="dark-button dark-button-primary">Explore my work</a>
+            <a href={PROFILE.whatsapp} target="_blank" rel="noopener noreferrer" className="dark-button dark-button-outline"><WhatsAppIcon/> WhatsApp</a>
           </div>
         </div>
-        <div className="dark-hero-scroll"><span>SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span></div>
+        <figure className="amber-frame">
+          <img src={asset('/dark/workspace.webp')} alt="Warmly lit development workstation" width={900} height={660} fetchPriority="high"/>
+          <figcaption>
+            <span>Project spotlight</span>
+            <Link href={`${workBase}/${featured.slug}/`}>{featured.title} <small>Engineering case study</small></Link>
+          </figcaption>
+        </figure>
       </section>
       <section id="work" className="dark-work dark-section dark-container" aria-labelledby="dark-work-title">
-        <div className="dark-section-heading"><div><span className="dark-section-label"><i/>01 — SELECTED WORK</span><h2 id="dark-work-title">Real work. <em>Real impact.</em></h2></div><span className="dark-subtle">BUILDING BEYOND THE INTERFACE</span></div>
+        <div className="dark-section-heading"><div><span className="dark-section-label"><i/>01 — SELECTED WORK</span><h2 id="dark-work-title">Inside <em>{featured.title}.</em></h2></div></div>
         <article className="dark-feature">
-          <Link href="/work/jameelaa/" className="dark-feature-image" aria-label="Read Jameelaa engineering case study"><img src={asset(featured.gallery[0].src)} alt={featured.gallery[0].alt} loading="lazy"/><span className="dark-image-label">EDITORIAL CONCEPT · NOT A PRODUCT SCREENSHOT</span></Link>
-          <div className="dark-feature-info"><span className="dark-feature-overline"><span className="dark-feature-spot"/>FEATURED CASE STUDY · 001</span><h3>{featured.title}<span>.</span></h3><p>{featured.overview}</p>
+          <Link href={`${workBase}/${featured.slug}/`} className="dark-feature-image" aria-label="Read Jameelaa engineering case study"><img src={asset(featured.gallery[0].src)} alt={featured.gallery[0].alt} loading="lazy"/><span className="dark-image-label">EDITORIAL CONCEPT · NOT A PRODUCT SCREENSHOT</span></Link>
+          <div className="dark-feature-info"><span className="dark-feature-overline"><span className="dark-feature-spot"/>BOOKING PLATFORM</span><h3>{featured.title}<span>.</span></h3><p>{featured.overview}</p>
             <div className="dark-feature-tags">{featured.stack.slice(0,5).map(t=><span key={t}>{t}</span>)}</div>
-            <div className="dark-feature-links"><Link href="/work/jameelaa/">Explore the case study <span aria-hidden="true">↗</span></Link><a href={featured.externalUrl} target="_blank" rel="noopener noreferrer">Live product ↗</a></div>
+            <div className="dark-feature-links"><Link href={`${workBase}/${featured.slug}/`}>Explore the case study <span aria-hidden="true">↗</span></Link><a href={featured.externalUrl} target="_blank" rel="noopener noreferrer">Live product ↗</a></div>
           </div>
         </article>
-        <p className="dark-work-note">Selected work spans product engineering, backend systems, deployment and ongoing operations — not just the screens.</p>
+        <p className="dark-work-note">My role covered full-stack engineering, backend architecture, release pipelines and production operations. I worked alongside the Flutter developer on the mobile product.</p>
       </section>
-      <AdditionalProjects edition="dark"/>
+      <AdditionalProjects edition="dark" workBase={workBase}/>
       <section id="experience" className="dark-experience dark-section">
         <div className="dark-container">
           <div className="dark-section-heading"><div><span className="dark-section-label"><i/>02 — EXPERIENCE</span><h2>More than <em>code.</em></h2></div></div>
@@ -71,8 +68,9 @@ export function DarkExperience(){
         <div className="dark-expertise-grid">{expertise.map(item=><article key={item.num} className="dark-expertise-card"><div className="dark-expertise-top"><span className="dark-expertise-icon">{item.icon}</span><span>{item.num} / 04</span></div><h3>{item.title}</h3><p>{item.detail}</p><div className="dark-expertise-stack">{item.stack}</div></article>)}</div>
       </section>
       <section className="dark-technology dark-section">
-        <div className="dark-container"><div className="dark-section-heading"><div><span className="dark-section-label"><i/>04 — TOOLBOX</span><h2>Tools are a means. <em>Outcomes matter.</em></h2></div></div>
-          <div className="dark-tech-grid">{technologies.map(t=><div key={t.name} className="dark-tech-item"><span className={`dark-tech-icon tone-${t.tone}`}>{t.mark}</span><span>{t.name}</span></div>)}</div></div>
+        <div className="dark-container"><div className="dark-section-heading"><div><span className="dark-section-label"><i/>04 — TOOLBOX</span><h2>My working <em>stack.</em></h2></div></div>
+          <dl className="amber-stack">{toolbox.map(group=><div key={group.area}><dt>{group.area}</dt><dd>{group.tools}</dd></div>)}</dl>
+        </div>
       </section>
       <section id="about" className="dark-about dark-container dark-section">
         <div className="dark-about-grid"><div><span className="dark-section-label"><i/>05 — ABOUT</span><h2>Build it well.<br/><em>Keep it running.</em></h2></div><div><p>Good engineering takes more than choosing a framework. It means understanding the problem, protecting existing users, shipping deliberately and taking responsibility for what runs in production.</p><p>That end-to-end mindset shapes how I approach projects, whether I&apos;m building a new feature or improving the system behind it.</p><a href={PROFILE.cv} target="_blank" rel="noopener noreferrer" className="dark-about-link">View my CV ↗</a></div></div>

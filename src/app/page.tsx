@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {ClassicExperience} from '@/components/ClassicExperience';
 import {EvolvedExperience} from '@/components/EvolvedExperience';
+import {FieldnotesExperience} from '@/components/FieldnotesExperience';
 import {DarkExperience} from '@/components/DarkExperience';
 import {ACTIVE_EDITION} from '@/config/portfolio';
 import {StructuredData} from '@/components/StructuredData';
@@ -12,5 +13,5 @@ export const metadata:Metadata={
   description:SITE_DESCRIPTION,
   alternates:{canonical:absoluteUrl('/')},
 };
-const editions={classic:ClassicExperience,evolved:EvolvedExperience,dark:DarkExperience};
+const editions={classic:ClassicExperience,evolved:EvolvedExperience,dark:DarkExperience,fieldnotes:FieldnotesExperience};
 export default function Page(){const Active=editions[ACTIVE_EDITION];return <><StructuredData data={portfolioStructuredData}/><Active/></>;}

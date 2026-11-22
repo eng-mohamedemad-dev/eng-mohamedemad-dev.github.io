@@ -6,6 +6,8 @@ import '@/styles/evolved.css';
 import '@/styles/dark.css';
 import '@/styles/case-study.css';
 import '@/styles/interaction.css';
+import '@/styles/edition-refresh.css';
+import '@/styles/fieldnotes.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),

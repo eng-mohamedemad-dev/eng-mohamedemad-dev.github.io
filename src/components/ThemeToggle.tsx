@@ -3,7 +3,7 @@
 import {useLayoutEffect,useState} from 'react';
 import type {PortfolioEdition} from '@/config/portfolio';
 
-const DEFAULT_THEME:Record<PortfolioEdition,'light'|'dark'>={classic:'light',evolved:'light',dark:'dark'};
+const DEFAULT_THEME:Record<PortfolioEdition,'light'|'dark'>={classic:'light',evolved:'light',dark:'dark',fieldnotes:'light'};
 function Icon({theme}:{theme:'light'|'dark'}) {
   return theme==='dark'
     ? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1a9 9 0 1 0 9.9 9.9Z"/></svg>

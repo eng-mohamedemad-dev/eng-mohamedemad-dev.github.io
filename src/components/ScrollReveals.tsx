@@ -3,6 +3,7 @@ import {useLayoutEffect} from 'react';
 import type {PortfolioEdition} from '@/config/portfolio';
 
 const SELECTORS:Record<PortfolioEdition,string>={
+  fieldnotes:'.field-case, .field-heading, .field-notebook, .field-contact-head',
   classic:'.reveal, .auto-project-card, .section-top, .detail, .approach-wrap > *, .footer-top, .contact-channels, .footer-bottom',
   evolved:'.reveal, .auto-project-card, .section-head, .secondary-card, .story-grid > div, .system-layout, .about-layout > div, .footer-lead, .contact-channels, .footer-bottom',
   dark:'.dark-section-heading, .dark-feature, .dark-work-note, .auto-project-card, .dark-journey-item, .dark-expertise-card, .dark-tech-item, .dark-about-grid > div, .dark-contact-inner, .dark-footer-inner',

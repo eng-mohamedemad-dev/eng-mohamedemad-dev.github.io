@@ -32,7 +32,7 @@ check(home.includes('application/ld+json') && home.includes('https://schema.org'
 check(project.includes('application/ld+json') && project.includes('BreadcrumbList'), 'case study emits breadcrumb JSON-LD');
 check(home.includes('og:image') && home.includes('twitter:card'), 'home has social-sharing metadata');
 check(sitemap.includes(url('/work/jameelaa/')) && sitemap.includes(url('/')), 'sitemap includes canonical routes');
-check(!sitemap.includes('/classic/') && !sitemap.includes('/evolved/') && !sitemap.includes('/dark/') && !sitemap.includes('/previews/'), 'sitemap excludes alternate/prototype routes');
+check(!sitemap.includes('/classic/') && !sitemap.includes('/evolved/') && !sitemap.includes('/dark/') && !sitemap.includes('/fieldnotes/') && !sitemap.includes('/previews/'), 'sitemap excludes alternate/prototype routes');
 check(robots.includes(url('/sitemap.xml')), 'robots.txt references sitemap');
 check(existsSync(join(output, 'og', 'portfolio.png')), 'portfolio share image exported');
 check(existsSync(join(output, 'og', 'jameelaa.png')), 'case-study share image exported');

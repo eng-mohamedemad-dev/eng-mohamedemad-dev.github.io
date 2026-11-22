@@ -1,0 +1,105 @@
+.edition-skip {
+  position: absolute; inset: .6rem auto auto .6rem; z-index: 120;
+  padding: .75rem 1rem; background: white; color: black !important;
+  transform: translateY(-160%);
+}
+.edition-skip:focus { transform: none; }
+
+/* Classic reads like a printed portfolio, with the image sitting on its own mount. */
+.edition-classic .folio-intro {
+  display: grid; grid-template-columns: minmax(0,1.12fr) minmax(0,.88fr);
+  gap: clamp(2rem,7vw,7rem); align-items: center;
+  padding-block: clamp(3rem,6vw,6rem); border-bottom: var(--rule);
+}
+.folio-byline, .press-credit, .amber-credit {
+  margin: 0; font-size: .9375rem; font-weight: 650; letter-spacing: .015em;
+}
+.folio-byline span, .press-credit span, .amber-credit span { margin-inline: .4em; opacity: .6; }
+.edition-classic .folio-copy h1 {
+  margin: .3em 0 .23em; font: 500 clamp(4rem,8.8vw,9rem)/.92 'Instrument Serif',Georgia,serif;
+  letter-spacing: -.047em;
+}
+.folio-copy h1 em { font-weight: 400; }
+.folio-lede, .press-lede, .amber-lede {
+  max-width: 32rem; margin: 0; font-size: clamp(1rem,1.4vw,1.23rem); line-height: 1.62;
+}
+.edition-classic .folio-cta, .edition-evolved .press-link {
+  display: inline-flex; align-items: center; min-height: 44px; margin-top: 1.4rem;
+  border-bottom: 1px solid currentColor; font-size: .97rem; font-weight: 700;
+}
+.folio-plate { position: relative; padding: .65rem; margin: 0 auto; width: min(100%,29rem); border: var(--rule); }
+.folio-plate img { display: block; width: 100%; height: auto; aspect-ratio: 1.12; object-fit: cover; }
+.folio-plate figcaption { padding: .75rem .25rem .15rem; color: var(--ink); font: italic 1.1rem/1.2 'Instrument Serif',Georgia,serif; }
+.edition-classic .feature-link:focus-visible, .project-lens button:focus-visible, .edition-classic .folio-cta:focus-visible {
+  outline: 2px solid currentColor; outline-offset: 4px;
+}
+
+/* Evolved puts an illustrated project walkthrough alongside the introduction. */
+.edition-evolved .press-hero { background: var(--acid); color: #20251b; border-bottom: 1px solid #78873a; }
+.edition-evolved[data-theme="dark"] .press-hero { background: #222e22; color: #eff6dc; border-color: #53604b; }
+.press-spread {
+  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.95fr); align-items: center;
+  gap: clamp(2rem,6vw,6rem); padding-block: clamp(3rem,6.3vw,7rem);
+}
+.edition-evolved .press-intro h1 {
+  font: 730 clamp(3.25rem,6.7vw,7.5rem)/.98 'DM Sans',Arial,sans-serif;
+  letter-spacing: -.065em; margin: .43em 0 .25em;
+}
+.press-intro h1 em { font: italic 400 1.08em/1 'Instrument Serif',Georgia,serif; letter-spacing: -.043em; }
+.project-lens { min-width: 0; padding: clamp(.8rem,1.8vw,1.5rem); background: #20291f; color: #f2f4e8; box-shadow: .45rem .45rem 0 #718337; }
+.lens-heading { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:0 0 .9rem; font-size:.875rem; }
+.lens-heading span { color:#cdd9bd; }
+.lens-heading strong { font: italic 1.48rem/1.1 'Instrument Serif',Georgia,serif; }
+.lens-image { overflow: hidden; background: #20291f; }
+.lens-image img { display:block; width:100%; height:auto; aspect-ratio:5/3; }
+.lens-controls { display:flex; flex-wrap:wrap; gap:.4rem; border-top:1px solid #54664d; padding-top:.8rem; }
+.lens-controls button { min-height:44px; flex:1; padding:.45rem; border:1px solid #647059; background:transparent; color:#eff4e4; font-family:inherit; font-size:.9rem; font-weight:600; line-height:1.15; cursor:pointer; }
+.lens-controls button[aria-pressed="true"] { color:#20251b; background:#d8ed8d; border-color:#d8ed8d; }
+.edition-evolved .lens-note { margin: .85rem 0 0; min-height:3.2em; color:#d4ddcc; font-size:.96rem; line-height:1.55; }
+
+/* Amber gives the workstation and project link a dedicated photographic frame. */
+.edition-dark .amber-hero {
+  display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+  align-items:center; gap:clamp(1.8rem,5vw,5.5rem);
+  padding-block:clamp(2.5rem,5vw,5.5rem); border-bottom:1px solid var(--stroke);
+}
+.amber-credit {color:var(--paper);}
+.amber-credit span {color:var(--orange);}
+.edition-dark .amber-intro h1 { margin:.32em 0 .26em; font-size:clamp(3.1rem,6.6vw,7.1rem); font-weight:760; line-height:.96; letter-spacing:-.065em; }
+.amber-intro h1 em { color:var(--orange); font-family:'Instrument Serif',Georgia,serif; font-style:italic; font-weight:400; letter-spacing:-.025em; }
+.edition-dark[data-theme="light"] .amber-intro h1 em {color:#a94412;}
+.amber-lede {color:var(--muted); margin-bottom:1.5rem;}
+.amber-frame {position:relative; margin:0; overflow:hidden; isolation:isolate; border-radius:1rem; background:#1a1d1b; border:1px solid var(--stroke);}
+.amber-frame::after {position:absolute; inset:0; content:''; pointer-events:none; background:linear-gradient(0deg,#0a0c0df5,transparent 57%);}
+.amber-frame img {display:block; width:100%; height:auto; aspect-ratio:1.08; object-fit:cover; object-position:62% 50%;}
+.amber-frame figcaption {position:absolute; z-index:1; inset:auto 0 0; padding:clamp(1.15rem,3vw,2.75rem); color:#fff;}
+.amber-frame figcaption > span {display:block; color:#ffbb8e; font-size:.9rem; margin-bottom:.5rem; }
+.edition-dark .amber-frame a {display:flex; align-items:baseline; flex-wrap:wrap; gap:.65rem; color:white; font-size:clamp(1.8rem,3vw,3.25rem); line-height:1.1; font-weight:700; letter-spacing:-.05em;}
+.amber-frame a small {font-size:.92rem; font-weight:500; letter-spacing:0; border-bottom:1px solid #f6a372;}
+.amber-frame a:hover small {color:#ffc19d;}
+.edition-dark .dark-work-note {font-size:1rem; line-height:1.65;}
+
+@media (max-width: 760px) {
+  .edition-classic .folio-intro, .press-spread, .edition-dark .amber-hero {grid-template-columns:1fr; gap:1.8rem;}
+  .folio-plate {width:100%;}
+  .folio-plate img {aspect-ratio:1.9; object-position:center 52%;}
+  .amber-frame img {aspect-ratio:1.85;}
+  .edition-classic .nav {height:auto; flex-wrap:wrap; padding-block:.85rem .3rem; gap:.65rem;}
+  .edition-classic .nav .nav-items {order:4; display:flex; flex:0 0 100%; justify-content:space-between; margin:0; gap:.4rem; border-top:var(--rule);}
+  .edition-classic .nav-items a {display:flex; align-items:center; min-height:42px; font-size:.875rem;}
+  .edition-classic .nav .logo {margin-right:auto;}
+  .edition-classic .nav .portfolio-theme-toggle {margin-left:0;}
+  .edition-classic .folio-copy h1 {font-size:clamp(3.85rem,14vw,6.7rem);}
+  .edition-evolved .press-intro h1, .edition-dark .amber-intro h1 {font-size:clamp(3.2rem,11.8vw,6.25rem);}
+}
+@media (prefers-reduced-motion:no-preference) {
+  .lens-image img {animation:lens-in 280ms ease-out;}
+  .folio-plate img, .amber-frame img {transition:transform .7s ease-out;}
+  @media (hover:hover) { .amber-frame:hover img {transform:scale(1.035);} }
+}
+@keyframes lens-in {from{opacity:.35;transform:translateY(3px)}to{opacity:1;transform:none}}
+
+.amber-stack {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1.5rem;margin:0;}
+.amber-stack > div {padding-block:1.25rem;border-top:1px solid var(--stroke);}
+.amber-stack dt {font-weight:700;font-size:1.08rem;color:var(--paper);}
+.amber-stack dd {margin:.55rem 0 0;line-height:1.65;color:var(--muted);}
